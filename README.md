@@ -11,3 +11,8 @@ The old Planzenapp shall be revived. The old app showed the amount of CO2 which 
 | Nodejs  |          |
 | Mysql   |          |
 
+## Ideas
+- Crowdsourcing
+- Local storage of Plants
+- Add CO2 positive things (car etc.)
+- Funny relations to Calculated Values
