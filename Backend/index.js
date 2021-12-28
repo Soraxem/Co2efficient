@@ -10,10 +10,10 @@ app.use(bodyparser.json());
 
 // Connection String to Database
 var mysqlConnection = mysql.createConnection({
-	host : 'localhost',
-	user : 'planter',
-	password : '123456',
-	database : 'plantapp',
+	host : '******',
+	user : '******',
+	password : '******',
+	database : '******',
 	multipleStatements : true
 });
 
@@ -53,6 +53,19 @@ app.get('/objects/:id',(req,res)=>{
 });
 });
 
+// Get the calculated comparison values
+app.get('/values/:c',(req,res)=>{
+	let x = req.params.c;
+	let ycar = 100000 * x / 25;
+	let zcar = ycar.toFixed(2).toString();
+	let ymeat = 1000 * x / 13.3;
+	let zmeat = ymeat.toFixed(2).toString();
+	let ypetrol = 1000 * x / 2.3;
+	let zpetrol = ypetrol.toFixed(2).toString();
+	res.send('With the accumulated CO2 you could drive '+zcar+' meters every hour.<br>With the accumulated CO2 you could eat '+zmeat+' grams of Beef every hour.<br>With the accumulated CO2 you could burn '+zpetrol+'ml of petrol.');
+});
+
+
 // Add new Object
 app.post('/objects', function(request, response){
 	var objname = request.body.Name;
@@ -66,3 +79,4 @@ app.post('/objects', function(request, response){
 		response.send('Error')
 });
 });
+
