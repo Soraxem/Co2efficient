@@ -1,4 +1,4 @@
-# PflanzenApp
+# Co2efficient
 An app which calculates the CO2 Usage of all plants in your household.
 
 ## Goal
