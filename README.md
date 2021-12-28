@@ -7,7 +7,7 @@ The old Planzenapp shall be revived. The old app showed the amount of CO2 which 
 ## Realisation
 | Backend | Frontend |
 | ------- | -------- |
-| ExPress | Kodular  | 
+| Expressjs | Kodular  | 
 | Nodejs  |          |
 | Mysql   |          |
 
