@@ -10,10 +10,10 @@ app.use(bodyparser.json());
 
 // Connection String to Database
 var mysqlConnection = mysql.createConnection({
-	host : '******',
-	user : '******',
-	password : '******',
-	database : '******',
+	host : 'localhost',
+	user : 'planter',
+	password : '123456',
+	database : 'plantapp',
 	multipleStatements : true
 });
 
@@ -62,8 +62,11 @@ app.get('/values/:c',(req,res)=>{
 	let zmeat = ymeat.toFixed(2).toString();
 	let ypetrol = 1000 * x / 2.3;
 	let zpetrol = ypetrol.toFixed(2).toString();
-	res.send('With the accumulated CO2 you could drive '+zcar+' meters every hour.<br>With the accumulated CO2 you could eat '+zmeat+' grams of Beef every hour.<br>With the accumulated CO2 you could burn '+zpetrol+'ml of petrol.');
-});
+	if (x < 0) {
+		res.send('With the accumulated CO2 you could drive '+Math.abs(zcar)+' meters every hour.<br>With the accumulated CO2 you could eat '+Math.abs(zmeat)+' grams of Beef every hour.<br>With the accumulated CO2 you could burn '+Math.abs(zpetrol)+'ml of petrol.')
+	} else {
+		res.send('To equal out your usage of CO2, you would have to drive '+zcar+' meters less with your car.<br>To equal out your usage of CO2, you would have to eat '+zmeat+' grams less beef.<br>To equal out your usage of CO2, you would have to burn '+zpetrol+'ml less petrol.')
+}});
 
 
 // Add new Object
@@ -71,7 +74,7 @@ app.post('/objects', function(request, response){
 	var objname = request.body.Name;
 	var objvalue = request.body.Value;
 	// Bulk insert using nested array [ [a,b],[c,d] ] will be flattend to (a,b),(c,d)
-	mysqlConnection.query('INSERT INTO Objects (Name,Value) VALUES (?,?)', [objname,objvalue],
+	mysqlConnection.query('INSERT INTO CheckObj (Name,Value) VALUES (?,?)', [objname,objvalue],
 	(err,rows,field)=>{
 	if(!err)
 		response.send('Success')
