@@ -11,6 +11,11 @@ The old Planzenapp shall be revived. The old app showed the amount of CO2 which 
 | Nodejs  |          |
 | Mysql   |          |
 
+## Important things to note
+- The amount of CO2 produced **MUST** be given in kg/h
+- The comparisons are calculated per hour
+
+
 ## Ideas
 - Crowdsourcing
 - Local storage of Plants
