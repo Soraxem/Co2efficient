@@ -8,7 +8,7 @@ POST :3000/objects -> Create new entry, requires JSON with name and value. examp
 
 ```javascript
 {
-  "Name":"plant",
-  "Value":"11"
+  "Name": "plant",
+  "Value": 11
 }
 ```
