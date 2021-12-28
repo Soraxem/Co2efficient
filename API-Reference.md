@@ -1,6 +1,9 @@
 # PlantAPI
 A simple API made with Nodejs, express and mysql
 
+## Functionality
+You have multiple CRUD's which are all listed bellow. When the API gets a GET request, it sends values from the "Objects" database. If it gets a POST request, it stores the values in the "CheckObj" database where they will be reviewed. You can review and accept the entries by executing the python file checker.py. 
+
 ## Apilities
 1. Comparisons
     * All the comparisons have a mean value for the CO2 per kilogram per hour
