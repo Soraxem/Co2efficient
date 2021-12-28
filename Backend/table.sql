@@ -1,6 +1,6 @@
 create table Objects(
-	Id INT NOT NULL,
+	id MEDIUMINT NOT NULL AUTO_INCREMENT,
 	Name VARCHAR(100) NOT NULL,
-	Value INT NOT NULL,
-	PRIMARY KEY (Id)
+	Value float NOT NULL,
+	PRIMARY KEY (id)
 );
